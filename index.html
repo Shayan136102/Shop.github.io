@@ -1,0 +1,2851 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کلیدهای میانبر ویندوز</title>
+    <style>
+        :root {
+            --primary-bg: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #2d1b69 100%);
+            --card-bg: rgba(255,255,255,0.05);
+            --card-border: rgba(255,255,255,0.12);
+            --text-primary: #f1f5f9;
+            --text-secondary: rgba(241,245,249,0.95);
+            --text-muted: rgba(241,245,249,0.75);
+            --key-bg: rgba(255,255,255,0.1);
+            --key-border: rgba(255,255,255,0.2);
+            --hover-bg: rgba(255,255,255,0.08);
+            --search-bg: rgba(255,255,255,0.1);
+            --backdrop-filter: blur(30px);
+            --accent-color: #4f46e5;
+            --copy-btn-bg: rgba(79,70,229,0.15);
+            --copy-btn-hover: rgba(79,70,229,0.25);
+        }
+
+        /* تم آبی */
+        [data-theme="blue"] {
+            --primary-bg: linear-gradient(135deg, #0c1e3e 0%, #1e3a8a 50%, #1d4ed8 100%);
+            --card-bg: rgba(29,78,216,0.12);
+            --card-border: rgba(29,78,216,0.25);
+            --text-primary: #e0f2fe;
+            --text-secondary: rgba(224,242,254,0.95);
+            --text-muted: rgba(224,242,254,0.8);
+            --key-bg: rgba(29,78,216,0.18);
+            --key-border: rgba(29,78,216,0.3);
+            --hover-bg: rgba(29,78,216,0.12);
+            --search-bg: rgba(29,78,216,0.12);
+            --accent-color: #2563eb;
+            --copy-btn-bg: rgba(37,99,235,0.15);
+            --copy-btn-hover: rgba(37,99,235,0.25);
+        }
+
+        /* تم بنفش */
+        [data-theme="purple"] {
+            --primary-bg: linear-gradient(135deg, #3c1361 0%, #6b21a8 50%, #8b5cf6 100%);
+            --card-bg: rgba(139,92,246,0.12);
+            --card-border: rgba(139,92,246,0.25);
+            --text-primary: #f5f3ff;
+            --text-secondary: rgba(245,243,255,0.95);
+            --text-muted: rgba(245,243,255,0.8);
+            --key-bg: rgba(139,92,246,0.18);
+            --key-border: rgba(139,92,246,0.3);
+            --hover-bg: rgba(139,92,246,0.12);
+            --search-bg: rgba(139,92,246,0.12);
+            --accent-color: #8b5cf6;
+            --copy-btn-bg: rgba(139,92,246,0.15);
+            --copy-btn-hover: rgba(139,92,246,0.25);
+        }
+
+        /* تم سبز */
+        [data-theme="green"] {
+            --primary-bg: linear-gradient(135deg, #0f2419 0%, #14532d 50%, #15803d 100%);
+            --card-bg: rgba(21,128,61,0.12);
+            --card-border: rgba(21,128,61,0.25);
+            --text-primary: #ecfdf5;
+            --text-secondary: rgba(236,253,245,0.95);
+            --text-muted: rgba(236,253,245,0.8);
+            --key-bg: rgba(21,128,61,0.18);
+            --key-border: rgba(21,128,61,0.3);
+            --hover-bg: rgba(21,128,61,0.12);
+            --search-bg: rgba(21,128,61,0.12);
+            --accent-color: #16a34a;
+            --copy-btn-bg: rgba(22,163,74,0.15);
+            --copy-btn-hover: rgba(22,163,74,0.25);
+        }
+
+        /* تم قرمز */
+        [data-theme="red"] {
+            --primary-bg: linear-gradient(135deg, #450a0a 0%, #7f1d1d 50%, #dc2626 100%);
+            --card-bg: rgba(220,38,38,0.12);
+            --card-border: rgba(220,38,38,0.25);
+            --text-primary: #fef2f2;
+            --text-secondary: rgba(254,242,242,0.95);
+            --text-muted: rgba(254,242,242,0.8);
+            --key-bg: rgba(220,38,38,0.18);
+            --key-border: rgba(220,38,38,0.3);
+            --hover-bg: rgba(220,38,38,0.12);
+            --search-bg: rgba(220,38,38,0.12);
+            --accent-color: #dc2626;
+            --copy-btn-bg: rgba(220,38,38,0.15);
+            --copy-btn-hover: rgba(220,38,38,0.25);
+        }
+
+        /* تم نارنجی */
+        [data-theme="orange"] {
+            --primary-bg: linear-gradient(135deg, #431407 0%, #9a3412 50%, #ea580c 100%);
+            --card-bg: rgba(234,88,12,0.12);
+            --card-border: rgba(234,88,12,0.25);
+            --text-primary: #fff7ed;
+            --text-secondary: rgba(255,247,237,0.95);
+            --text-muted: rgba(255,247,237,0.8);
+            --key-bg: rgba(234,88,12,0.18);
+            --key-border: rgba(234,88,12,0.3);
+            --hover-bg: rgba(234,88,12,0.12);
+            --search-bg: rgba(234,88,12,0.12);
+            --accent-color: #ea580c;
+            --copy-btn-bg: rgba(234,88,12,0.15);
+            --copy-btn-hover: rgba(234,88,12,0.25);
+        }
+
+        /* تم روشن */
+        [data-theme="light"] {
+            --primary-bg: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%);
+            --card-bg: rgba(255,255,255,0.9);
+            --card-border: rgba(0,0,0,0.08);
+            --text-primary: #0f172a;
+            --text-secondary: #1e293b;
+            --text-muted: #475569;
+            --key-bg: rgba(0,0,0,0.04);
+            --key-border: rgba(0,0,0,0.08);
+            --hover-bg: rgba(0,0,0,0.02);
+            --search-bg: rgba(255,255,255,0.95);
+            --accent-color: #2563eb;
+            --copy-btn-bg: rgba(37,99,235,0.1);
+            --copy-btn-hover: rgba(37,99,235,0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 2rem;
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: var(--primary-bg);
+            min-height: 100%;
+            overflow-x: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overscroll-behavior: none;
+            box-sizing: border-box;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            transition: opacity 0.4s ease;
+        }
+
+        [data-theme="light"] body::before {
+            opacity: 0.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .controls {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: var(--card-bg);
+            backdrop-filter: var(--backdrop-filter);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 100px;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: var(--hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .theme-selector {
+            position: relative;
+        }
+
+        .theme-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card-bg);
+            backdrop-filter: var(--backdrop-filter);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+            min-width: 200px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            white-space: nowrap;
+        }
+
+        .theme-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .theme-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-primary);
+        }
+
+        .theme-option:hover {
+            background: var(--hover-bg);
+        }
+
+        .theme-option.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .theme-preview {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--card-border);
+            flex-shrink: 0;
+        }
+
+        .default-preview {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .blue-preview {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+        }
+
+        .purple-preview {
+            background: linear-gradient(135deg, #581c87 0%, #7c3aed 50%, #a855f7 100%);
+        }
+
+        .green-preview {
+            background: linear-gradient(135deg, #14532d 0%, #16a34a 50%, #22c55e 100%);
+        }
+
+        .red-preview {
+            background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 50%, #ef4444 100%);
+        }
+
+        .orange-preview {
+            background: linear-gradient(135deg, #9a3412 0%, #ea580c 50%, #f97316 100%);
+        }
+
+        .light-preview {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+        }
+
+        .user-info {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: var(--card-bg);
+            backdrop-filter: var(--backdrop-filter);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .user-info:hover {
+            background: var(--hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .user-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .user-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .user-modal-content {
+            background: var(--card-bg);
+            backdrop-filter: var(--backdrop-filter);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .user-modal.show .user-modal-content {
+            transform: scale(1);
+        }
+
+        .user-modal h2 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .user-input {
+            width: 100%;
+            background: var(--search-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .user-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.1);
+        }
+
+        .user-submit {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .user-submit:hover {
+            background: var(--copy-btn-hover);
+            transform: translateY(-2px);
+        }
+
+        .blocked-message {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 1rem;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            transition: color 0.4s ease;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            transition: color 0.4s ease;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .search-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box {
+            background: var(--search-bg);
+            backdrop-filter: var(--backdrop-filter);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            padding: 1rem 3.5rem 1rem 2rem;
+            font-size: 1rem;
+            color: var(--text-primary);
+            width: 100%;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-submit-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-color);
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .search-submit-btn:hover {
+            background: var(--copy-btn-hover);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .search-icon {
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .search-box::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-box:focus {
+            background: var(--hover-bg);
+            border-color: var(--accent-color);
+            transform: scale(1.02);
+            box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.1);
+        }
+
+        .search-history {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 100%;
+            max-width: 400px;
+            background: var(--card-bg);
+            backdrop-filter: var(--backdrop-filter);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .search-history.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .search-history-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .search-history-item:hover {
+            background: var(--hover-bg);
+            color: var(--text-primary);
+        }
+
+        .search-history-icon {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .search-history-text {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .search-history-clear {
+            padding: 0.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .search-history-clear:hover {
+            color: var(--accent-color);
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .category {
+            background: var(--card-bg);
+            backdrop-filter: var(--backdrop-filter);
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 8px 32px rgba(0,0,0,0.1),
+                inset 0 1px 0 var(--card-border);
+            will-change: transform;
+        }
+
+        .category:hover {
+            transform: translateY(-4px);
+            background: var(--hover-bg);
+            box-shadow: 
+                0 16px 40px rgba(0,0,0,0.15),
+                inset 0 1px 0 var(--key-border);
+            border-color: var(--key-border);
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: color 0.4s ease;
+        }
+
+        .shortcut-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem;
+            margin-bottom: 0.8rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--card-border);
+            position: relative;
+            overflow: hidden;
+            will-change: transform;
+            min-height: 70px;
+        }
+
+        .shortcut-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 1.5rem;
+            flex-wrap: nowrap;
+        }
+
+        .copy-btn {
+            background: var(--copy-btn-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            backdrop-filter: blur(10px);
+            opacity: 0.8;
+        }
+
+        .copy-btn:hover {
+            background: var(--copy-btn-hover);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .copy-btn.copied {
+            background: var(--accent-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .shortcut-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--hover-bg), transparent);
+            transition: left 0.4s ease;
+        }
+
+        .shortcut-item:hover {
+            background: var(--hover-bg);
+            transform: translateX(-4px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+
+        .shortcut-item:hover::before {
+            left: 100%;
+        }
+
+        .shortcut-keys {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            direction: ltr;
+            flex-shrink: 0;
+            min-width: fit-content;
+        }
+
+        .key {
+            background: var(--key-bg);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid var(--key-border);
+            box-shadow: 
+                0 3px 10px rgba(0,0,0,0.15),
+                inset 0 1px 0 var(--key-border),
+                0 1px 3px rgba(0,0,0,0.1);
+            min-width: 40px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .key:hover {
+            background: var(--hover-bg);
+            transform: translateY(-1px);
+            box-shadow: 
+                0 4px 12px rgba(0,0,0,0.15),
+                inset 0 1px 0 var(--key-border);
+        }
+
+        .plus {
+            color: var(--text-muted);
+            font-weight: bold;
+            margin: 0 0.15rem;
+            font-size: 0.75rem;
+        }
+
+        .description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            flex: 1;
+            margin: 0 1rem;
+            transition: color 0.4s ease;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: var(--card-bg);
+            backdrop-filter: var(--backdrop-filter);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 1.25rem;
+            text-align: center;
+            min-width: 140px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-2px);
+            background: var(--hover-bg);
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: block;
+            transition: color 0.4s ease;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.4rem;
+            transition: color 0.4s ease;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            padding: 1.5rem 0;
+            text-align: center;
+            background: var(--card-bg);
+            backdrop-filter: var(--backdrop-filter);
+            border-top: 1px solid var(--card-border);
+            border-radius: 20px 20px 0 0;
+            transition: all 0.4s ease;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .school-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .school-logo {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .school-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .school-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--accent-color), #667eea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.4s ease;
+        }
+
+        .school-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            transition: color 0.4s ease;
+        }
+
+        .divider {
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+
+        .creator-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.25rem;
+            flex: 1;
+            text-align: right;
+        }
+
+        .creator-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            transition: color 0.4s ease;
+        }
+
+        .creator-name {
+            font-size: 1rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 4s ease infinite;
+            transition: all 0.4s ease;
+        }
+
+        .creator-role {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            transition: color 0.4s ease;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 1rem;
+                justify-content: center;
+            }
+            
+            .user-info {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-bottom: 1rem;
+                justify-content: center;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .categories {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .category {
+                padding: 1.25rem;
+            }
+            
+            .shortcut-item {
+                padding: 0.875rem;
+            }
+            
+            .shortcut-content {
+                flex-direction: row;
+                align-items: center;
+                gap: 0.75rem;
+                flex-wrap: wrap;
+            }
+            
+            .description {
+                margin: 0;
+                order: 2;
+                flex: 1;
+                min-width: 0;
+                text-align: right;
+            }
+            
+            .shortcut-keys {
+                order: 1;
+                flex-shrink: 0;
+            }
+            
+            .copy-btn {
+                order: 3;
+                flex-shrink: 0;
+            }
+
+            .stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 120px;
+                padding: 1rem;
+            }
+
+            .theme-dropdown {
+                left: auto;
+                right: 0;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .school-info {
+                justify-content: center;
+            }
+
+            .divider {
+                width: 60px;
+                height: 2px;
+                background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            }
+
+            .creator-info {
+                align-items: center;
+                text-align: center;
+            }
+
+            .school-logo {
+                font-size: 2.5rem;
+            }
+
+            .school-name {
+                font-size: 1.1rem;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* بهبود عملکرد */
+        .category, .shortcut-item, .control-btn {
+            contain: layout style paint;
+        }
+
+        .shortcut-item:hover {
+            contain: layout;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <div class="theme-selector">
+            <button class="control-btn" id="themeToggle">
+                <span id="themeIcon">🎨</span>
+                <span id="themeText">انتخاب تم</span>
+            </button>
+            <div class="theme-dropdown" id="themeDropdown">
+                <div class="theme-option active" data-theme="default">
+                    <div class="theme-preview default-preview"></div>
+                    <span>پیش‌فرض</span>
+                </div>
+                <div class="theme-option" data-theme="blue">
+                    <div class="theme-preview blue-preview"></div>
+                    <span>آبی</span>
+                </div>
+                <div class="theme-option" data-theme="purple">
+                    <div class="theme-preview purple-preview"></div>
+                    <span>بنفش</span>
+                </div>
+                <div class="theme-option" data-theme="green">
+                    <div class="theme-preview green-preview"></div>
+                    <span>سبز</span>
+                </div>
+                <div class="theme-option" data-theme="red">
+                    <div class="theme-preview red-preview"></div>
+                    <span>قرمز</span>
+                </div>
+                <div class="theme-option" data-theme="orange">
+                    <div class="theme-preview orange-preview"></div>
+                    <span>نارنجی</span>
+                </div>
+                <div class="theme-option" data-theme="light">
+                    <div class="theme-preview light-preview"></div>
+                    <span>روشن</span>
+                </div>
+            </div>
+        </div>
+        <button class="control-btn" id="langToggle">
+            <span>🌐</span>
+            <span id="langText">English</span>
+        </button>
+    </div>
+
+    <div class="user-info" id="userInfo">
+        <span>👤</span>
+        <span id="userDisplayName">کاربر مهمان</span>
+    </div>
+
+    <div class="user-modal" id="userModal">
+        <div class="user-modal-content">
+            <h2>🎓 خوش آمدید</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">لطفاً نام و نام خانوادگی خود را وارد کنید:</p>
+            <input type="text" class="user-input" id="firstName" placeholder="نام" maxlength="50">
+            <input type="text" class="user-input" id="lastName" placeholder="نام خانوادگی" maxlength="50">
+            <button class="user-submit" id="userSubmit">ورود به سیستم</button>
+            <div id="blockedMessage" class="blocked-message" style="display: none;">
+                🚫 متاسفانه شما مجاز به استفاده از این سیستم نیستید.
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title" id="mainTitle">🖥️ کلیدهای میانبر ویندوز</h1>
+            <p class="subtitle" id="mainSubtitle">راهنمای کامل کلیدهای میانبر برای افزایش سرعت کار</p>
+        </div>
+
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" class="search-box" placeholder="جستجو در کلیدهای میانبر..." id="searchInput">
+                <button class="search-submit-btn" id="searchSubmit" title="جستجو">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+            <div class="search-history" id="searchHistory">
+                <div id="searchHistoryItems"></div>
+                <div class="search-history-clear" id="clearHistory">پاک کردن تاریخچه</div>
+            </div>
+        </div>
+
+        <div class="categories" id="categoriesContainer">
+            <div class="category">
+                <h2 class="category-title">⚡ عمومی و پایه‌ای</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">C</span>
+                        </div>
+                        <div class="description">کپی کردن</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">V</span>
+                        </div>
+                        <div class="description">چسباندن</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">X</span>
+                        </div>
+                        <div class="description">برش</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Z</span>
+                        </div>
+                        <div class="description">برگشت به عقب</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Y</span>
+                        </div>
+                        <div class="description">تکرار عمل</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">A</span>
+                        </div>
+                        <div class="description">انتخاب همه</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">S</span>
+                        </div>
+                        <div class="description">ذخیره کردن</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">F</span>
+                        </div>
+                        <div class="description">جستجو در متن</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">H</span>
+                        </div>
+                        <div class="description">جایگزینی متن</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Delete</span>
+                        </div>
+                        <div class="description">حذف کردن</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">🪟 کلید ویندوز</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                        </div>
+                        <div class="description">باز کردن منوی استارت</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">D</span>
+                        </div>
+                        <div class="description">نمایش دسکتاپ</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">L</span>
+                        </div>
+                        <div class="description">قفل کردن کامپیوتر</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">R</span>
+                        </div>
+                        <div class="description">باز کردن Run</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">E</span>
+                        </div>
+                        <div class="description">باز کردن File Explorer</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">I</span>
+                        </div>
+                        <div class="description">باز کردن تنظیمات</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">X</span>
+                        </div>
+                        <div class="description">منوی Quick Link</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">Tab</span>
+                        </div>
+                        <div class="description">Task View</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">A</span>
+                        </div>
+                        <div class="description">مرکز اعلان‌ها</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">K</span>
+                        </div>
+                        <div class="description">اتصال سریع</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">U</span>
+                        </div>
+                        <div class="description">تنظیمات دسترسی</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">🔄 Alt + Tab</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Alt</span>
+                            <span class="plus">+</span>
+                            <span class="key">Tab</span>
+                        </div>
+                        <div class="description">جابجایی بین برنامه‌ها</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Alt</span>
+                            <span class="plus">+</span>
+                            <span class="key">F4</span>
+                        </div>
+                        <div class="description">بستن برنامه فعال</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Alt</span>
+                            <span class="plus">+</span>
+                            <span class="key">Enter</span>
+                        </div>
+                        <div class="description">Properties فایل انتخابی</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Alt</span>
+                            <span class="plus">+</span>
+                            <span class="key">Space</span>
+                        </div>
+                        <div class="description">منوی پنجره فعال</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">📁 File Explorer</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">N</span>
+                        </div>
+                        <div class="description">پنجره جدید Explorer</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Shift</span>
+                            <span class="plus">+</span>
+                            <span class="key">N</span>
+                        </div>
+                        <div class="description">ساخت پوشه جدید</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F2</span>
+                        </div>
+                        <div class="description">تغییر نام فایل</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F5</span>
+                        </div>
+                        <div class="description">بروزرسانی</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Backspace</span>
+                        </div>
+                        <div class="description">برگشت به پوشه قبلی</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Alt</span>
+                            <span class="plus">+</span>
+                            <span class="key">↑</span>
+                        </div>
+                        <div class="description">رفتن به پوشه والد</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">🖥️ مدیریت پنجره‌ها</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">↑</span>
+                        </div>
+                        <div class="description">بزرگ کردن پنجره</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">↓</span>
+                        </div>
+                        <div class="description">کوچک کردن پنجره</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">←</span>
+                        </div>
+                        <div class="description">چسباندن به چپ</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">→</span>
+                        </div>
+                        <div class="description">چسباندن به راست</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">M</span>
+                        </div>
+                        <div class="description">کمینه کردن همه پنجره‌ها</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">Home</span>
+                        </div>
+                        <div class="description">کمینه کردن سایر پنجره‌ها</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">🔍 جستجو و اجرا</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">S</span>
+                        </div>
+                        <div class="description">باز کردن جستجو</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Shift</span>
+                            <span class="plus">+</span>
+                            <span class="key">Esc</span>
+                        </div>
+                        <div class="description">Task Manager</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">.</span>
+                        </div>
+                        <div class="description">پنل ایموجی</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">V</span>
+                        </div>
+                        <div class="description">تاریخچه کلیپ‌بورد</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">🖨️ سیستم و چاپ</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">P</span>
+                        </div>
+                        <div class="description">چاپ کردن</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">PrtScn</span>
+                        </div>
+                        <div class="description">اسکرین‌شات کل صفحه</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">PrtScn</span>
+                        </div>
+                        <div class="description">اسکرین‌شات و ذخیره</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Alt</span>
+                            <span class="plus">+</span>
+                            <span class="key">PrtScn</span>
+                        </div>
+                        <div class="description">اسکرین‌شات پنجره فعال</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">Shift</span>
+                            <span class="plus">+</span>
+                            <span class="key">S</span>
+                        </div>
+                        <div class="description">ابزار Snipping</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">📝 Microsoft Word</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">N</span>
+                        </div>
+                        <div class="description">سند جدید</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">O</span>
+                        </div>
+                        <div class="description">باز کردن سند</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">B</span>
+                        </div>
+                        <div class="description">متن پررنگ</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">I</span>
+                        </div>
+                        <div class="description">متن کج</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">U</span>
+                        </div>
+                        <div class="description">زیرخط</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">E</span>
+                        </div>
+                        <div class="description">وسط چین</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">L</span>
+                        </div>
+                        <div class="description">چپ چین</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">R</span>
+                        </div>
+                        <div class="description">راست چین</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F7</span>
+                        </div>
+                        <div class="description">بررسی املا</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">📊 Microsoft Excel</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">;</span>
+                        </div>
+                        <div class="description">تاریخ امروز</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Shift</span>
+                            <span class="plus">+</span>
+                            <span class="key">;</span>
+                        </div>
+                        <div class="description">زمان فعلی</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F2</span>
+                        </div>
+                        <div class="description">ویرایش سلول</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">D</span>
+                        </div>
+                        <div class="description">پر کردن به پایین</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">R</span>
+                        </div>
+                        <div class="description">پر کردن به راست</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Alt</span>
+                            <span class="plus">+</span>
+                            <span class="key">=</span>
+                        </div>
+                        <div class="description">جمع خودکار</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">🌐 مرورگر وب</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">T</span>
+                        </div>
+                        <div class="description">تب جدید</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">W</span>
+                        </div>
+                        <div class="description">بستن تب</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Shift</span>
+                            <span class="plus">+</span>
+                            <span class="key">T</span>
+                        </div>
+                        <div class="description">بازگشایی تب بسته شده</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">F</span>
+                        </div>
+                        <div class="description">جستجو در صفحه</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F5</span>
+                        </div>
+                        <div class="description">بروزرسانی صفحه</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">+</span>
+                        </div>
+                        <div class="description">بزرگ کردن صفحه</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">-</span>
+                        </div>
+                        <div class="description">کوچک کردن صفحه</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">⌨️ کلیدهای عملکردی</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F1</span>
+                        </div>
+                        <div class="description">راهنما</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F3</span>
+                        </div>
+                        <div class="description">جستجو</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F4</span>
+                        </div>
+                        <div class="description">نوار آدرس</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F6</span>
+                        </div>
+                        <div class="description">جابجایی بین پنل‌ها</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F10</span>
+                        </div>
+                        <div class="description">فعال کردن منو</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F11</span>
+                        </div>
+                        <div class="description">حالت تمام صفحه</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F12</span>
+                        </div>
+                        <div class="description">ابزارهای توسعه‌دهنده</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Esc</span>
+                        </div>
+                        <div class="description">لغو عملیات</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">🔤 ویرایش متن</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">←</span>
+                        </div>
+                        <div class="description">رفتن به کلمه قبل</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">→</span>
+                        </div>
+                        <div class="description">رفتن به کلمه بعد</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Home</span>
+                        </div>
+                        <div class="description">شروع خط</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">End</span>
+                        </div>
+                        <div class="description">انتهای خط</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Home</span>
+                        </div>
+                        <div class="description">شروع سند</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">End</span>
+                        </div>
+                        <div class="description">انتهای سند</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Backspace</span>
+                        </div>
+                        <div class="description">حذف کلمه قبلی</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Delete</span>
+                        </div>
+                        <div class="description">حذف کلمه بعدی</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">💻 برنامه‌نویسی و کدنویسی</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">/</span>
+                        </div>
+                        <div class="description">کامنت کردن خط</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Shift</span>
+                            <span class="plus">+</span>
+                            <span class="key">K</span>
+                        </div>
+                        <div class="description">حذف خط</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">D</span>
+                        </div>
+                        <div class="description">انتخاب کلمه مشابه</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Alt</span>
+                            <span class="plus">+</span>
+                            <span class="key">↑</span>
+                        </div>
+                        <div class="description">جابجایی خط به بالا</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Alt</span>
+                            <span class="plus">+</span>
+                            <span class="key">↓</span>
+                        </div>
+                        <div class="description">جابجایی خط به پایین</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Shift</span>
+                            <span class="plus">+</span>
+                            <span class="key">L</span>
+                        </div>
+                        <div class="description">انتخاب خط کامل</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">F12</span>
+                        </div>
+                        <div class="description">رفتن به تعریف</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Space</span>
+                        </div>
+                        <div class="description">تکمیل خودکار</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">🎯 کلیدهای اضافی مفید</h2>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">1-9</span>
+                        </div>
+                        <div class="description">اجرای برنامه از Taskbar</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Shift</span>
+                            <span class="plus">+</span>
+                            <span class="key">Delete</span>
+                        </div>
+                        <div class="description">حذف دائمی فایل</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">Space</span>
+                        </div>
+                        <div class="description">تغییر زبان ورودی</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">G</span>
+                        </div>
+                        <div class="description">Xbox Game Bar</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">H</span>
+                        </div>
+                        <div class="description">تایپ صوتی</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">Plus</span>
+                        </div>
+                        <div class="description">ذره‌بین (بزرگ‌نمایی)</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">Alt</span>
+                            <span class="plus">+</span>
+                            <span class="key">Delete</span>
+                        </div>
+                        <div class="description">صفحه امنیت ویندوز</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-content">
+                        <div class="shortcut-keys">
+                            <span class="key">Win</span>
+                            <span class="plus">+</span>
+                            <span class="key">Ctrl</span>
+                            <span class="plus">+</span>
+                            <span class="key">D</span>
+                        </div>
+                        <div class="description">دسکتاپ مجازی جدید</div>
+                        <button class="copy-btn" title="کپی کردن">📋</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number" id="totalShortcuts">115</span>
+                <span class="stat-label">کلید میانبر</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="totalCategories">15</span>
+                <span class="stat-label">دسته‌بندی</span>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <div class="school-info">
+                    <div class="school-logo">🎓</div>
+                    <div class="school-details">
+                        <div class="school-name">دبیرستان فرهنگیان شهید بهشتی</div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="creator-info">
+                    <div class="creator-text">طراحی و توسعه توسط:</div>
+                    <div class="creator-name">شایان شعاعی</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // متغیرهای سراسری
+        let currentLanguage = 'fa';
+        let currentTheme = 'default';
+        let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+        let allShortcuts = [];
+        let userName = localStorage.getItem('userName') || '';
+        let isBlocked = localStorage.getItem('isBlocked') === 'true';
+
+        // بررسی کاربر مسدود شده
+        const blockedNames = [
+            'سینا بنی اسدی',
+            'سینا اسدی',
+            'sina bani asadi',
+            'sina asadi'
+        ];
+
+        // المان‌های DOM
+        const elements = {
+            themeToggle: document.getElementById('themeToggle'),
+            themeDropdown: document.getElementById('themeDropdown'),
+            langToggle: document.getElementById('langToggle'),
+            searchInput: document.getElementById('searchInput'),
+            searchSubmit: document.getElementById('searchSubmit'),
+            searchHistory: document.getElementById('searchHistory'),
+            searchHistoryItems: document.getElementById('searchHistoryItems'),
+            clearHistory: document.getElementById('clearHistory'),
+            categoriesContainer: document.getElementById('categoriesContainer'),
+            userInfo: document.getElementById('userInfo'),
+            userModal: document.getElementById('userModal'),
+            userDisplayName: document.getElementById('userDisplayName'),
+            firstName: document.getElementById('firstName'),
+            lastName: document.getElementById('lastName'),
+            userSubmit: document.getElementById('userSubmit'),
+            blockedMessage: document.getElementById('blockedMessage')
+        };
+
+        // بارگذاری اولیه
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+
+        function initializeApp() {
+            try {
+                // بررسی وضعیت کاربر
+                if (isBlocked) {
+                    showBlockedMessage();
+                    return;
+                }
+
+                if (!userName) {
+                    showUserModal();
+                } else {
+                    if (elements.userDisplayName) {
+                        elements.userDisplayName.textContent = userName;
+                    }
+                }
+
+                // بارگذاری تم ذخیره شده
+                const savedTheme = localStorage.getItem('theme') || 'default';
+                applyTheme(savedTheme);
+
+                // بارگذاری زبان ذخیره شده
+                const savedLang = localStorage.getItem('language') || 'fa';
+                setLanguage(savedLang);
+
+                // جمع‌آوری تمام کلیدهای میانبر
+                collectAllShortcuts();
+
+                // اضافه کردن event listener ها
+                addEventListeners();
+
+                // بارگذاری تاریخچه جستجو
+                updateSearchHistory();
+                
+            } catch (error) {
+                console.error('خطا در بارگذاری اپلیکیشن:', error);
+                // در صورت خطا، حداقل عملکرد اساسی را فراهم کن
+                if (elements.searchInput) {
+                    elements.searchInput.addEventListener('input', handleSearch);
+                }
+            }
+        }
+
+        function showUserModal() {
+            elements.userModal.classList.add('show');
+        }
+
+        function hideUserModal() {
+            elements.userModal.classList.remove('show');
+        }
+
+        function showBlockedMessage() {
+            elements.userModal.classList.add('show');
+            elements.firstName.style.display = 'none';
+            elements.lastName.style.display = 'none';
+            elements.userSubmit.style.display = 'none';
+            elements.blockedMessage.style.display = 'block';
+            document.querySelector('.user-modal h2').textContent = '🚫 دسترسی محدود';
+            document.querySelector('.user-modal p').textContent = 'متاسفانه شما مجاز به استفاده از این سیستم نیستید.';
+        }
+
+        function addEventListeners() {
+            // مدیریت کاربر
+            elements.userSubmit.addEventListener('click', handleUserSubmit);
+            elements.firstName.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') elements.lastName.focus();
+            });
+            elements.lastName.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') handleUserSubmit();
+            });
+
+            // تم
+            elements.themeToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                elements.themeDropdown.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function() {
+                elements.themeDropdown.classList.remove('show');
+                elements.searchHistory.classList.remove('show');
+            });
+
+            document.querySelectorAll('.theme-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const theme = this.dataset.theme;
+                    applyTheme(theme);
+                    elements.themeDropdown.classList.remove('show');
+                });
+            });
+
+            // زبان
+            elements.langToggle.addEventListener('click', toggleLanguage);
+
+            // جستجو
+            elements.searchInput.addEventListener('input', handleSearch);
+            elements.searchInput.addEventListener('focus', function() {
+                if (searchHistory.length > 0) {
+                    elements.searchHistory.classList.add('show');
+                }
+            });
+            elements.searchSubmit.addEventListener('click', performSearch);
+            elements.searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    performSearch();
+                }
+            });
+
+            // تاریخچه جستجو
+            elements.clearHistory.addEventListener('click', clearSearchHistory);
+
+            // کپی کردن
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('copy-btn')) {
+                    copyShortcut(e.target);
+                }
+            });
+        }
+
+        function handleUserSubmit() {
+            const firstName = elements.firstName.value.trim();
+            const lastName = elements.lastName.value.trim();
+            
+            // ریست کردن استایل‌های خطا
+            elements.firstName.style.borderColor = '';
+            elements.lastName.style.borderColor = '';
+            
+            if (!firstName || !lastName) {
+                if (!firstName) elements.firstName.style.borderColor = '#ef4444';
+                if (!lastName) elements.lastName.style.borderColor = '#ef4444';
+                
+                // نمایش پیام خطا
+                const errorMsg = document.createElement('div');
+                errorMsg.style.color = '#ef4444';
+                errorMsg.style.fontSize = '0.8rem';
+                errorMsg.style.marginTop = '0.5rem';
+                errorMsg.textContent = 'لطفاً نام و نام خانوادگی خود را وارد کنید';
+                
+                const existingError = document.querySelector('.error-message');
+                if (existingError) existingError.remove();
+                
+                errorMsg.className = 'error-message';
+                elements.userSubmit.parentNode.insertBefore(errorMsg, elements.userSubmit);
+                
+                setTimeout(() => {
+                    if (errorMsg.parentNode) errorMsg.remove();
+                }, 3000);
+                
+                return;
+            }
+
+            const fullName = `${firstName} ${lastName}`.toLowerCase();
+            const isBlockedUser = blockedNames.some(blocked => 
+                fullName === blocked.toLowerCase()
+            );
+
+            if (isBlockedUser) {
+                localStorage.setItem('isBlocked', 'true');
+                showBlockedMessage();
+                return;
+            }
+
+            // ذخیره نام کاربر
+            const displayName = `${firstName} ${lastName}`;
+            localStorage.setItem('userName', displayName);
+            userName = displayName;
+            elements.userDisplayName.textContent = displayName;
+            hideUserModal();
+        }
+
+        function performSearch() {
+            const query = elements.searchInput.value.trim();
+            if (!query) return;
+
+            // اضافه کردن به تاریخچه
+            if (!searchHistory.includes(query)) {
+                searchHistory.unshift(query);
+                if (searchHistory.length > 10) {
+                    searchHistory = searchHistory.slice(0, 10);
+                }
+                localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+                updateSearchHistory();
+            }
+
+            // انجام جستجو
+            handleSearch();
+            elements.searchHistory.classList.remove('show');
+        }
+
+        function handleSearch() {
+            const query = elements.searchInput.value.toLowerCase().trim();
+            const categories = document.querySelectorAll('.category');
+            
+            if (!query) {
+                categories.forEach(category => {
+                    category.style.display = 'block';
+                    const shortcuts = category.querySelectorAll('.shortcut-item');
+                    shortcuts.forEach(shortcut => {
+                        shortcut.style.display = 'flex';
+                        shortcut.style.opacity = '1';
+                    });
+                });
+                return;
+            }
+
+            categories.forEach(category => {
+                const shortcuts = category.querySelectorAll('.shortcut-item');
+                let hasVisibleShortcuts = false;
+
+                shortcuts.forEach(shortcut => {
+                    const description = shortcut.querySelector('.description');
+                    const keys = shortcut.querySelector('.shortcut-keys');
+                    
+                    if (description && keys) {
+                        const descText = description.textContent.toLowerCase();
+                        const keysText = keys.textContent.toLowerCase().replace(/\s+/g, ' ');
+                        
+                        if (descText.includes(query) || keysText.includes(query)) {
+                            shortcut.style.display = 'flex';
+                            shortcut.style.opacity = '1';
+                            hasVisibleShortcuts = true;
+                        } else {
+                            shortcut.style.display = 'none';
+                            shortcut.style.opacity = '0';
+                        }
+                    }
+                });
+
+                category.style.display = hasVisibleShortcuts ? 'block' : 'none';
+            });
+        }
+
+        function updateSearchHistory() {
+            if (searchHistory.length === 0) {
+                elements.searchHistory.classList.remove('show');
+                return;
+            }
+
+            elements.searchHistoryItems.innerHTML = '';
+            searchHistory.forEach(item => {
+                const historyItem = document.createElement('div');
+                historyItem.className = 'search-history-item';
+                historyItem.innerHTML = `
+                    <span class="search-history-icon">🕒</span>
+                    <span class="search-history-text">${item}</span>
+                `;
+                historyItem.addEventListener('click', function() {
+                    elements.searchInput.value = item;
+                    handleSearch();
+                    elements.searchHistory.classList.remove('show');
+                });
+                elements.searchHistoryItems.appendChild(historyItem);
+            });
+        }
+
+        function clearSearchHistory() {
+            searchHistory = [];
+            localStorage.removeItem('searchHistory');
+            elements.searchHistory.classList.remove('show');
+        }
+
+        function collectAllShortcuts() {
+            const shortcuts = document.querySelectorAll('.shortcut-item');
+            allShortcuts = Array.from(shortcuts).map(item => ({
+                keys: item.querySelector('.shortcut-keys').textContent,
+                description: item.querySelector('.description').textContent
+            }));
+        }
+
+        function copyShortcut(button) {
+            const shortcutItem = button.closest('.shortcut-item');
+            const keysElement = shortcutItem.querySelector('.shortcut-keys');
+            const descriptionElement = shortcutItem.querySelector('.description');
+            
+            if (!keysElement || !descriptionElement) return;
+            
+            // استخراج متن کلیدها با حذف فاصله‌های اضافی
+            let keysText = '';
+            const keyElements = keysElement.querySelectorAll('.key');
+            const plusElements = keysElement.querySelectorAll('.plus');
+            
+            keyElements.forEach((key, index) => {
+                keysText += key.textContent.trim();
+                if (index < keyElements.length - 1) {
+                    keysText += ' + ';
+                }
+            });
+            
+            const description = descriptionElement.textContent.trim();
+            const textToCopy = `${keysText} - ${description}`;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showCopySuccess(button);
+            }).catch(() => {
+                // Fallback برای مرورگرهای قدیمی
+                const textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                textArea.style.top = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                try {
+                    document.execCommand('copy');
+                    showCopySuccess(button);
+                } catch (err) {
+                    console.error('Copy failed:', err);
+                }
+                
+                document.body.removeChild(textArea);
+            });
+        }
+
+        function showCopySuccess(button) {
+            const originalContent = button.innerHTML;
+            button.innerHTML = '✅';
+            button.classList.add('copied');
+            
+            setTimeout(() => {
+                button.innerHTML = originalContent;
+                button.classList.remove('copied');
+            }, 2000);
+        }
+
+        function applyTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            currentTheme = theme;
+            localStorage.setItem('theme', theme);
+            
+            // به‌روزرسانی UI انتخاب تم
+            document.querySelectorAll('.theme-option').forEach(option => {
+                option.classList.remove('active');
+                if (option.dataset.theme === theme) {
+                    option.classList.add('active');
+                }
+            });
+        }
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'fa' ? 'en' : 'fa';
+            setLanguage(currentLanguage);
+        }
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            
+            const translations = {
+                fa: {
+                    title: '🖥️ کلیدهای میانبر ویندوز',
+                    subtitle: 'راهنمای کامل کلیدهای میانبر برای افزایش سرعت کار',
+                    searchPlaceholder: 'جستجو در کلیدهای میانبر...',
+                    langText: 'English',
+                    themeText: 'انتخاب تم',
+                    userGreeting: 'خوش آمدید',
+                    userPrompt: 'لطفاً نام و نام خانوادگی خود را وارد کنید:',
+                    firstNamePlaceholder: 'نام',
+                    lastNamePlaceholder: 'نام خانوادگی',
+                    submitText: 'ورود به سیستم',
+                    categories: {
+                        'عمومی و پایه‌ای': 'General & Basic',
+                        'کلید ویندوز': 'Windows Key',
+                        'Alt + Tab': 'Alt + Tab',
+                        'File Explorer': 'File Explorer',
+                        'مدیریت پنجره‌ها': 'Window Management',
+                        'جستجو و اجرا': 'Search & Run',
+                        'سیستم و چاپ': 'System & Print',
+                        'Microsoft Word': 'Microsoft Word',
+                        'Microsoft Excel': 'Microsoft Excel',
+                        'مرورگر وب': 'Web Browser',
+                        'کلیدهای عملکردی': 'Function Keys',
+                        'ویرایش متن': 'Text Editing',
+                        'برنامه‌نویسی و کدنویسی': 'Programming & Coding',
+                        'کلیدهای اضافی مفید': 'Additional Useful Keys'
+                    },
+                    shortcuts: {
+                        'کپی کردن': 'Copy',
+                        'چسباندن': 'Paste',
+                        'برش': 'Cut',
+                        'برگشت به عقب': 'Undo',
+                        'تکرار عمل': 'Redo',
+                        'انتخاب همه': 'Select All',
+                        'ذخیره کردن': 'Save',
+                        'جستجو در متن': 'Find in Text',
+                        'جایگزینی متن': 'Replace Text',
+                        'حذف کردن': 'Delete',
+                        'باز کردن منوی استارت': 'Open Start Menu',
+                        'نمایش دسکتاپ': 'Show Desktop',
+                        'قفل کردن کامپیوتر': 'Lock Computer',
+                        'باز کردن Run': 'Open Run',
+                        'باز کردن File Explorer': 'Open File Explorer',
+                        'باز کردن تنظیمات': 'Open Settings',
+                        'منوی Quick Link': 'Quick Link Menu',
+                        'Task View': 'Task View',
+                        'مرکز اعلان‌ها': 'Action Center',
+                        'اتصال سریع': 'Quick Connect',
+                        'تنظیمات دسترسی': 'Accessibility Settings'
+                    },
+                    stats: {
+                        'کلید میانبر': 'Shortcuts',
+                        'دسته‌بندی': 'Categories'
+                    },
+                    footer: {
+                        'دبیرستان فرهنگیان شهید بهشتی': 'Farhangian Shahid Beheshti High School',
+                        'طراحی و توسعه توسط:': 'Designed & Developed by:'
+                    }
+                },
+                en: {
+                    title: '🖥️ Windows Keyboard Shortcuts',
+                    subtitle: 'Complete guide to keyboard shortcuts for increased productivity',
+                    searchPlaceholder: 'Search shortcuts...',
+                    langText: 'فارسی',
+                    themeText: 'Select Theme',
+                    userGreeting: 'Welcome',
+                    userPrompt: 'Please enter your first and last name:',
+                    firstNamePlaceholder: 'First Name',
+                    lastNamePlaceholder: 'Last Name',
+                    submitText: 'Login',
+                    categories: {
+                        'عمومی و پایه‌ای': 'General & Basic',
+                        'کلید ویندوز': 'Windows Key',
+                        'Alt + Tab': 'Alt + Tab',
+                        'File Explorer': 'File Explorer',
+                        'مدیریت پنجره‌ها': 'Window Management',
+                        'جستجو و اجرا': 'Search & Run',
+                        'سیستم و چاپ': 'System & Print',
+                        'Microsoft Word': 'Microsoft Word',
+                        'Microsoft Excel': 'Microsoft Excel',
+                        'مرورگر وب': 'Web Browser',
+                        'کلیدهای عملکردی': 'Function Keys',
+                        'ویرایش متن': 'Text Editing',
+                        'برنامه‌نویسی و کدنویسی': 'Programming & Coding',
+                        'کلیدهای اضافی مفید': 'Additional Useful Keys'
+                    },
+                    shortcuts: {
+                        'کپی کردن': 'Copy',
+                        'چسباندن': 'Paste',
+                        'برش': 'Cut',
+                        'برگشت به عقب': 'Undo',
+                        'تکرار عمل': 'Redo',
+                        'انتخاب همه': 'Select All',
+                        'ذخیره کردن': 'Save',
+                        'جستجو در متن': 'Find in Text',
+                        'جایگزینی متن': 'Replace Text',
+                        'حذف کردن': 'Delete',
+                        'باز کردن منوی استارت': 'Open Start Menu',
+                        'نمایش دسکتاپ': 'Show Desktop',
+                        'قفل کردن کامپیوتر': 'Lock Computer',
+                        'باز کردن Run': 'Open Run',
+                        'باز کردن File Explorer': 'Open File Explorer',
+                        'باز کردن تنظیمات': 'Open Settings',
+                        'منوی Quick Link': 'Quick Link Menu',
+                        'Task View': 'Task View',
+                        'مرکز اعلان‌ها': 'Action Center',
+                        'اتصال سریع': 'Quick Connect',
+                        'تنظیمات دسترسی': 'Accessibility Settings'
+                    },
+                    stats: {
+                        'کلید میانبر': 'Shortcuts',
+                        'دسته‌بندی': 'Categories'
+                    },
+                    footer: {
+                        'دبیرستان فرهنگیان شهید بهشتی': 'Farhangian Shahid Beheshti High School',
+                        'طراحی و توسعه توسط:': 'Designed & Developed by:'
+                    }
+                }
+            };
+
+            const t = translations[lang];
+            
+            // به‌روزرسانی عناصر اصلی
+            const mainTitle = document.getElementById('mainTitle');
+            const mainSubtitle = document.getElementById('mainSubtitle');
+            const langText = document.getElementById('langText');
+            const themeText = document.getElementById('themeText');
+            
+            if (mainTitle) mainTitle.textContent = t.title;
+            if (mainSubtitle) mainSubtitle.textContent = t.subtitle;
+            if (elements.searchInput) elements.searchInput.placeholder = t.searchPlaceholder;
+            if (langText) langText.textContent = t.langText;
+            if (themeText) themeText.textContent = t.themeText;
+            
+            // به‌روزرسانی مودال کاربر
+            const modalTitle = document.querySelector('.user-modal h2');
+            const modalPrompt = document.querySelector('.user-modal p');
+            
+            if (modalTitle && !isBlocked) modalTitle.textContent = `🎓 ${t.userGreeting}`;
+            if (modalPrompt && !isBlocked) modalPrompt.textContent = t.userPrompt;
+            if (elements.firstName) elements.firstName.placeholder = t.firstNamePlaceholder;
+            if (elements.lastName) elements.lastName.placeholder = t.lastNamePlaceholder;
+            if (elements.userSubmit) elements.userSubmit.textContent = t.submitText;
+            
+            // به‌روزرسانی عناوین دسته‌بندی‌ها
+            document.querySelectorAll('.category-title').forEach(title => {
+                const originalText = title.textContent.replace(/^[^\s]+\s/, ''); // حذف ایموجی
+                const emoji = title.textContent.match(/^[^\s]+/)[0]; // استخراج ایموجی
+                if (t.categories[originalText]) {
+                    title.textContent = `${emoji} ${lang === 'fa' ? originalText : t.categories[originalText]}`;
+                }
+            });
+            
+            // به‌روزرسانی توضیحات کلیدهای میانبر
+            document.querySelectorAll('.description').forEach(desc => {
+                const originalText = desc.textContent;
+                if (t.shortcuts[originalText]) {
+                    desc.textContent = lang === 'fa' ? originalText : t.shortcuts[originalText];
+                }
+            });
+            
+            // به‌روزرسانی آمار
+            document.querySelectorAll('.stat-label').forEach(label => {
+                const originalText = label.textContent;
+                if (t.stats[originalText]) {
+                    label.textContent = lang === 'fa' ? originalText : t.stats[originalText];
+                }
+            });
+            
+            // به‌روزرسانی فوتر
+            const schoolName = document.querySelector('.school-name');
+            const creatorText = document.querySelector('.creator-text');
+            
+            if (schoolName) {
+                schoolName.textContent = lang === 'fa' ? 'دبیرستان فرهنگیان شهید بهشتی' : t.footer['دبیرستان فرهنگیان شهید بهشتی'];
+            }
+            if (creatorText) {
+                creatorText.textContent = lang === 'fa' ? 'طراحی و توسعه توسط:' : t.footer['طراحی و توسعه توسط:'];
+            }
+            
+            // تنظیم جهت و زبان
+            document.documentElement.setAttribute('lang', lang);
+            document.documentElement.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
+            document.body.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e8c80024fe9bfa',t:'MTc2MDQ2Mjc4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
